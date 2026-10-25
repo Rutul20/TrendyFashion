@@ -20,6 +20,16 @@ export const CHANNEL_INFO: ChannelInfo = {
 		"Trendy Fashion is a participant in the Amazon Associates Program, an affiliate advertising program designed to provide a means for creators to earn advertising fees by linking to Amazon.in. When you purchase through our links, we may earn an affiliate commission at no extra cost to you.",
 };
 
+// Official Amazon Associates Store ID
+export const AMAZON_AFFILIATE_TAG: string = "trendyjd-21";
+
+/**
+ * Builds clean Amazon India affiliate URL with the associate tracking tag.
+ */
+export function buildAffiliateUrl(asin: string, tag: string = AMAZON_AFFILIATE_TAG): string {
+	return `https://www.amazon.in/dp/${asin}?tag=${encodeURIComponent(tag)}`;
+}
+
 export const CATEGORIES: readonly ProductCategory[] = [
 	"All",
 	"Ethnic Wear",
@@ -27,6 +37,9 @@ export const CATEGORIES: readonly ProductCategory[] = [
 	"Anarkali Sets",
 	"Straight Kurti Sets",
 ];
+
+const rawBase: string = import.meta.env.BASE_URL;
+const assetBase: string = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
 
 export const PRODUCTS: Product[] = [
 	{
@@ -38,7 +51,7 @@ export const PRODUCTS: Product[] = [
 		priceRange: "₹649",
 		rating: 4.6,
 		reviewCount: 840,
-		image: "/products/tf01.png?v=clean",
+		image: `${assetBase}products/tf01.png?v=clean`,
 		shortDesc: "Breathable pure cotton floral co-ord set with Mandarin V-neckline, 3/4 sleeves, and functional side pockets.",
 		description: "Featured in our Latest Amazon Ethnic Haul. Made from 100% lightweight cotton with an effortless A-line cut, matching trousers, and drawstring waist. Fits true to size.",
 		highlights: [
@@ -49,7 +62,7 @@ export const PRODUCTS: Product[] = [
 			"Available in sizes S to 3XL"
 		],
 		stylingTip: "Pair with minimalist silver hoops, a woven tan tote, and slip-on mules for an easy, polished daytime look.",
-		amazonUrl: "https://www.amazon.in/dp/B0DYP64WQ4/?coliid=I7DEF1KD8EW2T&colid=1CV34JZKMXFDG&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+		amazonUrl: buildAffiliateUrl("B0DYP64WQ4"),
 		youtubeVideoUrl: "https://www.youtube.com/@trendy-jd"
 	},
 	{
@@ -61,7 +74,7 @@ export const PRODUCTS: Product[] = [
 		priceRange: "₹599",
 		rating: 4.5,
 		reviewCount: 620,
-		image: "/products/tf02.png?v=clean",
+		image: `${assetBase}products/tf02.png?v=clean`,
 		shortDesc: "Rust-red striped straight calf-length kurti paired with wide-leg ethnic printed palazzo trousers.",
 		description: "The ideal everyday work and college staple. Crafted from wrinkle-resistant soft rayon that holds its shape all day with flattering vertical stripes.",
 		highlights: [
@@ -72,7 +85,7 @@ export const PRODUCTS: Product[] = [
 			"Machine wash safe with colorfast dyes"
 		],
 		stylingTip: "Style with oxidised silver jhumkas, stacked bangles, and flat neutral kolhapuris.",
-		amazonUrl: "https://www.amazon.in/dp/B0HCP31NKH/?coliid=IY4Z1GF5P2SGX&colid=1CV34JZKMXFDG&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+		amazonUrl: buildAffiliateUrl("B0HCP31NKH"),
 		youtubeVideoUrl: "https://www.youtube.com/@trendy-jd"
 	},
 	{
@@ -84,7 +97,7 @@ export const PRODUCTS: Product[] = [
 		priceRange: "₹729",
 		rating: 4.7,
 		reviewCount: 2950,
-		image: "/products/tf03.png?v=clean",
+		image: `${assetBase}products/tf03.png?v=clean`,
 		shortDesc: "Classic indigo-blue flared Anarkali kurta complete with matching printed palazzo and featherlight Mulmul dupatta.",
 		description: "One of our most requested try-ons from our Festive Budget Edit. Pure cotton Anarkali flare that drapes fluidly, finished with delicate Mulmul dupatta.",
 		highlights: [
@@ -95,7 +108,7 @@ export const PRODUCTS: Product[] = [
 			"Gentle hand wash recommended"
 		],
 		stylingTip: "Add silver oxidised earrings and mirror-work juttis to complement the indigo floral print.",
-		amazonUrl: "https://www.amazon.in/dp/B0BTX2DWV1/?coliid=I30CA0BM260XWX&colid=1CV34JZKMXFDG&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+		amazonUrl: buildAffiliateUrl("B0BTX2DWV1"),
 		youtubeVideoUrl: "https://www.youtube.com/@trendy-jd"
 	},
 	{
@@ -107,7 +120,7 @@ export const PRODUCTS: Product[] = [
 		priceRange: "₹668",
 		rating: 4.8,
 		reviewCount: 4120,
-		image: "/products/tf04.png?v=clean",
+		image: `${assetBase}products/tf04.png?v=clean`,
 		shortDesc: "Crimson-maroon viscose Anarkali suit set with gold geometric print accents, cigarette pants, and printed dupatta.",
 		description: "Featured in our Wedding Guest Lookbook Under ₹1000. Rich maroon tone paired with traditional motifs that gives a boutique designer look at high-street pricing.",
 		highlights: [
@@ -118,7 +131,7 @@ export const PRODUCTS: Product[] = [
 			"Available in sizes S up to 5XL"
 		],
 		stylingTip: "Accentuate the deep maroon tone with antique kundan jewelry and metallic block heels for evening events.",
-		amazonUrl: "https://www.amazon.in/dp/B0FRFW2S81/?coliid=IYZ349XAC6U3J&colid=1CV34JZKMXFDG&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+		amazonUrl: buildAffiliateUrl("B0FRFW2S81"),
 		youtubeVideoUrl: "https://www.youtube.com/@trendy-jd"
 	},
 	{
@@ -130,7 +143,7 @@ export const PRODUCTS: Product[] = [
 		priceRange: "₹688",
 		rating: 4.8,
 		reviewCount: 3870,
-		image: "/products/tf05.png?v=clean",
+		image: `${assetBase}products/tf05.png?v=clean`,
 		shortDesc: "Vibrant teal blue viscose flared Anarkali set with gold foil border detailing, straight trousers, and Chanderi dupatta.",
 		description: "The viral hit from our Diwali Lookbook. Radiant teal blue shade with golden foil trim on lightweight viscose that stays comfortable through long celebrations.",
 		highlights: [
@@ -141,7 +154,7 @@ export const PRODUCTS: Product[] = [
 			"Flattering silhouette from waist to calf with generous flare"
 		],
 		stylingTip: "Pair with pearl and polki earrings, nude lip, and an embroidered potli for festive occasions.",
-		amazonUrl: "https://www.amazon.in/dp/B0FDVDYRBC/?coliid=I35XYZ9LJU5G03&colid=1CV34JZKMXFDG&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it",
+		amazonUrl: buildAffiliateUrl("B0FDVDYRBC"),
 		youtubeVideoUrl: "https://www.youtube.com/@trendy-jd"
 	}
 ];
